@@ -1,1 +1,9 @@
 <h2>Dashboard</h2>
+
+<ul>
+  <% current_user.tasks.each do |task| %>
+    <li>
+      <%= task.title %> | <%= task.done %>
+    </li>
+  <% end %>
+</ul>

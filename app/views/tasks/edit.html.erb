@@ -1,1 +1,11 @@
-<h2>Edit Task</h2>
+<div class="container">
+  <div class="row">
+    <div class="mx-auto" style="width: 400px;">
+      <h2 style="text-align: center;">Edit Task</h2>
+      <%= simple_form_for @task do |f| %>
+        <%= f.input :title %>
+        <%= f.submit "Update Task", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
