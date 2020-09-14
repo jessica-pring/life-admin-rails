@@ -30,7 +30,7 @@ import "bootstrap";
 
 import { getWeather } from '../components/weather_app';
 let city = "London"
-const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=73b9da93f214734d68637632804fa602`
+const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}`
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
