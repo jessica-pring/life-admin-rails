@@ -1,9 +1,22 @@
-<h2>Dashboard</h2>
+<div class="container">
 
-<ul>
-  <% current_user.tasks.each do |task| %>
-    <li>
-      <%= task.title %> | <%= task.done %>
-    </li>
-  <% end %>
-</ul>
+  <div class="left-container">
+    <h2>Dashboard</h2>
+
+    <ul>
+      <% current_user.tasks.each do |task| %>
+        <li>
+          <%= task.title %> | <%= task.done %> <%= link_to 'Delete', task_path(task), class: "btn",
+                method: :delete,
+                data: { confirm: "Are you sure?" } %>
+        </li>
+      <% end %>
+    </ul>
+
+    <%= link_to "New Task", new_task_path, class: "btn btn-primary" %>
+  </div>
+
+  <div class="weather-container">
+  
+  </div>
+</div>
