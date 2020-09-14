@@ -28,7 +28,13 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
+import { getWeather } from '../components/weather_app';
+let city = "London"
+const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}`
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  getWeather(url);
 });
+
