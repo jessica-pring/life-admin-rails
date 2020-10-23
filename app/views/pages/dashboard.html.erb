@@ -3,15 +3,18 @@
   <div class="left-container">
     <h2>Dashboard</h2>
 
-    <ul>
+    <div class="tasks">
       <% current_user.tasks.each do |task| %>
-        <li>
-          <%= task.title %> | <%= task.done %> <%= link_to 'Delete', task_path(task), class: "btn",
+        <p>
+          <%# <%= link_to task.done ? "✔" : "❌", task_path(task), method: :task_done? %>
+          
+          <%= task.title %>
+          <%= link_to '☠', task_path(task), class: "btn del",
                 method: :delete,
                 data: { confirm: "Are you sure?" } %>
-        </li>
+        </p>
       <% end %>
-    </ul>
+    </div>
 
     <%= link_to "New Task", new_task_path, class: "btn btn-primary" %>
   </div>
